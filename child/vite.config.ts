@@ -19,7 +19,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
   const env = loadEnv(mode, root);
   // The boolean type read by loadEnv is a string. This function can be converted to boolean type
   const viteEnv = wrapperEnv(env);
-  const { VITE_PORT, VITE_BUILD_DROP_CONSOLE, VITE_ENV } = viteEnv;
+  const { VITE_PORT, VITE_BUILD_DROP_CONSOLE, VITE_ENV, VITE_APP_APPURL } = viteEnv;
   return {
     resolve: {
       alias: {
@@ -30,7 +30,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
         '@api': resovePath('./src/api'),
       },
     },
-    base: `${VITE_ENV === 'production' ? viteEnv.VITE_APP_BASEAPP_URL : ''}/order/`,
+    base: `${VITE_ENV === 'production' ? VITE_APP_APPURL : ''}/order/`,
     // plugins
     plugins: createVitePlugins(isBuild),
 

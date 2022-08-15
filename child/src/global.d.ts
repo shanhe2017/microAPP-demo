@@ -16,4 +16,5 @@ declare interface ViteEnv {
   VITE_OPEN_PROXY0: boolean;
   VITE_APP_BASEAPP_URL: string;
   VITE_APP_NTSYS_ID: string;
+  VITE_APP_APPURL: string;
 }

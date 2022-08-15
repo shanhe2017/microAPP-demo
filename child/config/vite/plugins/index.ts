@@ -4,7 +4,7 @@
  */
 import type { Plugin } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import legacy from '@vitejs/plugin-legacy';
+// import legacy from '@vitejs/plugin-legacy';
 // import Icons from 'unplugin-icons/vite';
 // import { ConfigSvgIconsPlugin } from './svgIcons';
 import { AutoRegistryComponents } from './component';
@@ -66,14 +66,14 @@ export function createVitePlugins(isBuild: boolean) {
   ];
 
   // @vitejs/plugin-legacy
-  isBuild &&
-    vitePlugins.push(
-      legacy({
-        targets: ['Chrome 63'],
-        additionalLegacyPolyfills: ['regenerator-runtime/runtime'],
-        modernPolyfills: true,
-      }),
-    );
+  // isBuild &&
+  //   vitePlugins.push(
+  //     legacy({
+  //       targets: ['Chrome 63'],
+  //       additionalLegacyPolyfills: ['regenerator-runtime/runtime'],
+  //       modernPolyfills: true,
+  //     }),
+  //   );
 
   // vite-plugin-svg-icons
   //   vitePlugins.push(ConfigSvgIconsPlugin(isBuild));
